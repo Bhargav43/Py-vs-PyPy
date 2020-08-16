@@ -22,8 +22,11 @@ Third-party Libraries: [virtualenv](https://pypi.org/project/virtualenv/), [pyen
 
 For more info on these, click on individual names or checkout the [Stack Overflow](https://stackoverflow.com/a/41573588/9207580) answer by Mr.Flimm.
 
+## Purpose of this Application
+This is to create virtual environments for both Default Python and Python+PyPy compilers and conpare the performance in terms of execution speed of through each environment.
+
 ### Creating Virtual Environments:
-I wish to create 2 virtual environments as follows:
+I've created 2 Virtual Environments using [virtualenv](https://pypi.org/project/virtualenv/) for Python 3.7 and Python 3.6 PyPy 7.3 32-bit Compiler as follows,
 
 1. **python37** - Virtual Environment with Python 3.7.7 Default Compiler.
 ```
@@ -44,7 +47,7 @@ Path\to\project\directory> .\virtualenv_name\Scripts\activate
 (virtualenv_name) Path\to\project\directory> pypy -m pip install ".\pypy3.6-v7.3.1-win32\numpy-1.18.5+vanilla-pp36-pypy36_pp73-win32.whl"
 (virtualenv_name) Path\to\project\directory> pypy -m pip install ".\pypy3.6-v7.3.1-win32\pandas-1.0.5-pp36-pypy36_pp73-win32.whl"
 ```
-<p class="note">Note: If you are downloading the whole [Py-vs-PyPy]() repo to local, you won't need to create virtual environments (or) install packages. But kindly note that due to the portable versions of Python and PyPy, and their Virtual Environment Files, the size of this repo would be high (600+ MB).</p>
+<p class="note">Note: If you are getting the whole Py-vs-PyPy repo to local (not from Git as it has restrictions), you won't need to create virtual environments (or) install packages. But kindly note that due to the portable versions of Python and PyPy, and their Virtual Environment Files, the size of this repo would be high (600+ MB).</p>
 
 ### Python Scripts
 
@@ -105,6 +108,6 @@ Total Time of execution = 1.1019093990325928 (1.10 Seconds)
 ```
 
 ### Conclusion
-As observed in the above output, the PyPy compiler's execution speed is more or less equal to the native Python as of date 16-Aug-2020, may be due to the PyPy standalone binary is only available of Python 3.6 32-bit for Windows till date, or may be due to virtual environment compatibility of all new PyPy. Either ways, the development on this is rapid and soon it is expected to beat CPython in speed, and the usage of cross-compilers/implementations like Cython, Jython, IronPython, CLPython, PyObjC, Ruby Python, etc. are replaced by Python's compiler PyPy alone.
+As observed in the above output, the PyPy compiler's execution speed is more or less equal to the native Python as of date 16-Aug-2020. This can be due to the PyPy standalone binary of Python 3.6 32-bit for Windows is the only thing available till date. Or may be due to virtual environment discrepancy for PyPy as new in town. Either ways, the development on this is rapid and soon it is expected to beat CPython in speed, and also the usage of cross-compilers/implementations like Cython, Jython, IronPython, CLPython, PyObjC, Ruby Python, etc. might get replaced by PyPy alone (Because these cross-compilers are mostly used due to the need of speed and concurrency with the awesomeness of Python).
 
 <h1 class="footer">This page will be posted time-to-time. Happy Pythoning!!</h1>
