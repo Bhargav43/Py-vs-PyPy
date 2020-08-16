@@ -1,13 +1,4 @@
-<style>
-    * {color: #000080;}
-    h1.header {color: #2E8B57; font-size: 35; font-family: Palatino Linotype;}
-    h1.footer {color: #E2B13C; font-family: Palatino Linotype;}
-    h2, h3, h4, h5 {color: #3Cb371; font-family: Palatino Linotype;}
-    a:link, a:visited, a:hover, a:active {color: #2778D1; font-size: 16px; font-family: Lucida Console;}
-    p.note {color: #FF7F50; font-family: Palatino Linotype;}
-</style>
-
-<h1 class="header">Py-vs-PyPy: For PyPy Compiler's Performance Testing</h1>
+# Py-vs-PyPy: For PyPy Compiler's Performance Testing :snake:
 
 ## What is PyPy?
 
@@ -22,8 +13,11 @@ Third-party Libraries: [virtualenv](https://pypi.org/project/virtualenv/), [pyen
 
 For more info on these, click on individual names or checkout the [Stack Overflow](https://stackoverflow.com/a/41573588/9207580) answer by Mr.Flimm.
 
+## Purpose of this Application
+This is to create virtual environments for both Default Python and Python+PyPy compilers and conpare the performance in terms of execution speed of through each environment.
+
 ### Creating Virtual Environments:
-I wish to create 2 virtual environments as follows:
+I've created 2 Virtual Environments using [virtualenv](https://pypi.org/project/virtualenv/) for Python 3.7 and Python 3.6 PyPy 7.3 32-bit Compiler as follows,
 
 1. **python37** - Virtual Environment with Python 3.7.7 Default Compiler.
 ```
@@ -38,35 +32,35 @@ python -m virtualenv py36pypy73 -p ".\pypy3.6-v7.3.1-win32\pypy3.exe"
 This created Virtual Environment py36pypy73 and it's folder.
 
 ### To Install Numpy & Pandas Windows Binaries in PyPy Virtual Environment:
-I've downloaded and placed the binaries in [.\pypy3.6-v7.3.1-win32\]()
+I've downloaded and placed the binaries in [.\pypy3.6-v7.3.1-win32\](https://github.com/Bhargav43/Py-vs-PyPy/tree/master/pypy3.6-v7.3.1-win32)
 ```
 Path\to\project\directory> .\virtualenv_name\Scripts\activate
 (virtualenv_name) Path\to\project\directory> pypy -m pip install ".\pypy3.6-v7.3.1-win32\numpy-1.18.5+vanilla-pp36-pypy36_pp73-win32.whl"
 (virtualenv_name) Path\to\project\directory> pypy -m pip install ".\pypy3.6-v7.3.1-win32\pandas-1.0.5-pp36-pypy36_pp73-win32.whl"
 ```
-<p class="note">Note: If you are downloading the whole [Py-vs-PyPy]() repo to local, you won't need to create virtual environments (or) install packages. But kindly note that due to the portable versions of Python and PyPy, and their Virtual Environment Files, the size of this repo would be high (600+ MB).</p>
+`Note: GitHub somehow isn't allowing the virtual environment folders 'py36pypy73' & 'python37' to be uploaded. Please perform the above mentioned steps to create them locally.`
 
 ### Python Scripts
 
 Sno. | Module Name | Description | Basic Syntax
 ----:|:-----------:|:------------|:------------
-1 | create_batch.py | Creates a Batch File (Run Me.bat) for running the specified program using both Python and PyPy Virtual Environments, and calculating the execution time of both. This is the user module of this application. | python create_batch.py program.py
-2 | details.py | Prints the Compiler details of working console. | python details.py
-3 | execution_time.py | Calculates the execution time of the program name sent as argument to function. Also calls details.py for compiler details. | python execution_time.py program.py
-4 | format_time.py | Formats time (seconds) into respective units: Microseconds/Milliseconds/Seconds/Minutes/Hours. | python format_time.py [No. of Seconds]
-5 | sample_data_loading.py | Sample program which processes data using Pandas Module but prints nothing as we are concerned about execution time. | python sample_data_loading.py
-6 | sample_waiting_prog.py | Sample program which sleeps for 10 seconds. | python sample_waiting_prog.py
+1 | [create_batch.py](https://github.com/Bhargav43/Py-vs-PyPy/blob/master/create_batch.py) | Creates a Batch File (Run Me.bat) for running the specified program using both Python and PyPy Virtual Environments, and calculating the execution time of both. This is the user module of this application. | python create_batch.py program.py
+2 | [details.py](https://github.com/Bhargav43/Py-vs-PyPy/blob/master/details.py) | Prints the Compiler details of working console. | python details.py
+3 | [execution_time.py](https://github.com/Bhargav43/Py-vs-PyPy/blob/master/execution_time.py) | Calculates the execution time of the program name sent as argument to function. Also calls details.py for compiler details. | python execution_time.py program.py
+4 | [format_time.py](https://github.com/Bhargav43/Py-vs-PyPy/blob/master/format_time.py) | Formats time (seconds) into respective units: Microseconds/Milliseconds/Seconds/Minutes/Hours. | python format_time.py [No. of Seconds]
+5 | [sample_data_loading.py](https://github.com/Bhargav43/Py-vs-PyPy/blob/master/sample_data_loading.py) | Sample program which processes data using Pandas Module but prints nothing as we are concerned about execution time. | python sample_data_loading.py
+6 | [sample_waiting_prog.py](https://github.com/Bhargav43/Py-vs-PyPy/blob/master/sample_waiting_prog.py) | Sample program which sleeps for 10 seconds. | python sample_waiting_prog.py
 
 ### Usage
 #### 1. Creating the Batch File
 Open Command Prompt at the project location and run the following, without activating any virtual environments.
-1. ```
+```
 Path\to\project\directory> python create_batch.py sample_waiting_prog.py
 ```
 
 ##### _(OR)_
 
-2. ```
+```
 Path\to\project\directory> python create_batch.py sample_data_loading.py
 ```
 
@@ -74,7 +68,7 @@ This creates "Run Me.bat" file in the directory which when ran, calculates the e
 
 #### 2. Running the Batch File
 Run the batch file "Run Me.bat" which got created and you see something like this:
-##### Output of `sample_waiting_prog.py` 's Batch File:
+##### Output of [`sample_waiting_prog.py`](https://github.com/Bhargav43/Py-vs-PyPy/blob/master/sample_waiting_prog.py) 's Batch File:
 ```
 Date: Sunday, 16-Aug-2020 09:55:02 PM
 Python Version: 3.6.9 (2ad108f17bdb, Apr 07 2020, 03:05:35)
@@ -89,7 +83,7 @@ Executing Module: sample_waiting_prog.py
 Total Time of execution = 10.002431631088257 (10.00 Seconds)
 ```
 
-##### Output of `sample_data_loading.py` 's Batch File:
+##### Output of [`sample_data_loading.py`](https://github.com/Bhargav43/Py-vs-PyPy/blob/master/sample_data_loading.py) 's Batch File:
 ```
 Date: Sunday, 16-Aug-2020 10:04:38 PM
 Python Version: 3.6.9 (2ad108f17bdb, Apr 07 2020, 03:05:35)
@@ -105,6 +99,6 @@ Total Time of execution = 1.1019093990325928 (1.10 Seconds)
 ```
 
 ### Conclusion
-As observed in the above output, the PyPy compiler's execution speed is more or less equal to the native Python as of date 16-Aug-2020, may be due to the PyPy standalone binary is only available of Python 3.6 32-bit for Windows till date, or may be due to virtual environment compatibility of all new PyPy. Either ways, the development on this is rapid and soon it is expected to beat CPython in speed, and the usage of cross-compilers/implementations like Cython, Jython, IronPython, CLPython, PyObjC, Ruby Python, etc. are replaced by Python's compiler PyPy alone.
+As observed in the above output, the PyPy compiler's execution speed is more or less equal to the native Python as of date 16-Aug-2020. This can be due to the PyPy standalone binary of Python 3.6 32-bit for Windows is the only thing available till date. Or may be due to virtual environment discrepancy for PyPy as new in town. Either ways, the development on this is rapid and soon it is expected to beat CPython in speed, and also the usage of cross-compilers/implementations like Cython, Jython, IronPython, CLPython, PyObjC, Ruby Python, etc. might get replaced by PyPy alone (Because these cross-compilers are mostly used due to the need of speed and concurrency with the awesomeness of Python).
 
-<h1 class="footer">This page will be posted time-to-time. Happy Pythoning!!</h1>
+# This page will be posted time-to-time. Happy Pythoning!!
