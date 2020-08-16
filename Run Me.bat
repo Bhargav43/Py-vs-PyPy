@@ -1,0 +1,1 @@
+cmd /k "cd .\py36pypy73\Scripts & activate & cd ..\.. & python execution_time.py sample_waiting_prog.py & cd .\py36pypy73\Scripts & deactivate & cd ..\.. & cd .\python37\Scripts & activate & cd ..\.. & python execution_time.py sample_waiting_prog.py & cd .\python37\Scripts & deactivate & cd ..\.."
