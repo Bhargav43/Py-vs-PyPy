@@ -13,6 +13,13 @@ Third-party Libraries: [virtualenv](https://pypi.org/project/virtualenv/), [pyen
 
 For more info on these, click on individual names or checkout the [Stack Overflow](https://stackoverflow.com/a/41573588/9207580) answer by Mr.Flimm.
 
+## Base System's Configurations :wrench:
+**Sno.** | **Name** | **Version/Config.**
+-------: | :------: | :------------------
+1 | Operating System | Windows 10 x64 bit
+2 | Python | Version 3.7.8rc1 x64 bit
+3 | IDE | VS Code 1.48.1 x64 bit
+
 ## Purpose of this Application
 This is to create virtual environments for both Default Python and Python+PyPy compilers and conpare the performance in terms of execution speed of through each environment.
 
