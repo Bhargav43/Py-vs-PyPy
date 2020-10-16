@@ -21,7 +21,7 @@ For more info on these, click on individual names or checkout the [Stack Overflo
 3 | IDE | VS Code 1.48.1 x64 bit
 
 ## Purpose of this Application
-This is to create virtual environments for both Default Python and Python+PyPy compilers and conpare the performance in terms of execution speed of through each environment.
+This is to create virtual environments for both Default Python and Python+PyPy compilers and compare the performance in terms of execution speed.
 
 ### Creating Virtual Environments:
 I've created 2 Virtual Environments using [virtualenv](https://pypi.org/project/virtualenv/) for Python 3.7 and Python 3.6 PyPy 7.3 32-bit Compiler as follows,
